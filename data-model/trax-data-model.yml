@@ -1,0 +1,57 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.apidoc.traxretail.com/input-api
+notes: >-
+  Entity graph derived from the Trax API reference (master data + Input API). Trax's core in-store
+  capture model nests Images inside Scenes inside Sessions (a store visit), all bound to master-data
+  Stores and Products.
+entities:
+- name: Session
+  description: A collection of scenes captured in a store; also called a store visit.
+  relationships:
+  - kind: has_many
+    target: Scene
+    via: scene list
+  - kind: belongs_to
+    target: Store
+    via: store
+- name: Scene
+  description: A collection of images depicting a physical section in the store.
+  relationships:
+  - kind: has_many
+    target: Image
+    via: images
+  - kind: belongs_to
+    target: Session
+    via: session_id
+- name: Image
+  description: One of many pictures captured during a session; the basic recognition unit in Trax.
+  relationships:
+  - kind: belongs_to
+    target: Scene
+    via: scene
+- name: Store
+  description: Retail location; master-data entity with regions, districts, branches, store types, states.
+  relationships:
+  - kind: belongs_to
+    target: Retailer
+    via: retailer
+  - kind: belongs_to
+    target: Region
+    via: region
+- name: Product
+  description: Master-data product recognized on shelves.
+- name: Retailer
+  description: Retail chain grouping stores.
+- name: Route
+  description: Visit-planning route grouping store visits and tasks.
+  relationships:
+  - kind: has_many
+    target: Task
+    via: tasks
+- name: Task
+  description: Work item within a visit type; carries a task_code matched to scene types.
+- name: Assortment
+  description: Expected product assortment for a store or visit.
+- name: AuditCycleSet
+  description: Grouping of audit cycles governing measurement cadence.

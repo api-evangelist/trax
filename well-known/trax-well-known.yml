@@ -1,0 +1,46 @@
+generated: '2026-07-21'
+method: probed
+source: live probes of /.well-known/ on Trax hosts
+notes: >-
+  No genuine well-known discovery documents were found. The API service hosts
+  (services/gservices.traxretail.com) return HTTP 200 for every /.well-known/ path, but the body is
+  the Angular single-page-app shell (text/html "Trax Image Recognition"), i.e. a catch-all, not a
+  real security.txt / OIDC / api-catalog document. traxretail.com returns 404/302. No raw files were
+  saved because none of the responses are authentic well-known documents.
+hosts:
+- host: https://services.traxretail.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    real: false
+    content_type: text/html
+    note: SPA catch-all, not RFC 9116 security.txt
+  - path: /.well-known/openid-configuration
+    status: 200
+    real: false
+    content_type: text/html
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    real: false
+    content_type: text/html
+  - path: /.well-known/api-catalog
+    status: 200
+    real: false
+    content_type: text/html
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    real: false
+- host: https://traxretail.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    real: false
+  - path: /.well-known/openid-configuration
+    status: 302
+    real: false
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    real: false
+  - path: /.well-known/api-catalog
+    status: 404
+    real: false

@@ -1,0 +1,24 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.apidoc.traxretail.com/
+versioning:
+  scheme: uri-path
+  current: v6
+  also_published:
+  - v4
+  - v5
+  docs: https://www.apidoc.traxretail.com/
+  notes: >-
+    API version is carried in the request path (/api/:version_number/...). Multiple concurrent
+    versions of user and import resources are published side by side (V4, V5, V6).
+deprecation:
+  policy_url: null
+  sunset_header: null
+  notes: >-
+    No formal deprecation policy or RFC 8594 Sunset/Deprecation header support is documented in the
+    public portal. Older resource versions (for example "Product Import OLD") remain available
+    alongside newer ones.
+sla:
+  url: null
+status_page: null
+deprecated_operations: []

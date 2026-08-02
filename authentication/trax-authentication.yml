@@ -1,0 +1,40 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.apidoc.traxretail.com/
+docs: https://www.apidoc.traxretail.com/
+summary:
+  types:
+  - http
+  - oauth2
+  notes: >-
+    Partner API access authenticates with Trax platform credentials (username and password) or via
+    Single Sign-On over OAuth 2.0. The Scene Mobile SDK additionally requests a per-day license
+    token from the Trax license-management system to authorize SDK use for that calendar day.
+schemes:
+- name: TraxCredentials
+  type: http
+  scheme: basic
+  description: Trax platform username and password used for direct partner API authentication.
+  sources:
+  - docs
+- name: SSO
+  type: oauth2
+  description: >-
+    Single Sign-On using the OAuth 2.0 protocol against a customer-configured authentication server.
+    Documented identity-provider integrations include ADFS, Salesforce (SFDC), Okta, and Ping
+    Federate.
+  identity_providers:
+  - ADFS
+  - Salesforce
+  - Okta
+  - Ping Federate
+  sources:
+  - docs
+- name: SceneSDKDailyToken
+  type: http
+  scheme: bearer
+  description: >-
+    Daily token requested from the Trax license-management system by the Scene Mobile SDK to verify
+    eligibility to use the SDK on a given day (Android and iOS).
+  sources:
+  - docs

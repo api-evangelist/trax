@@ -1,0 +1,23 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.apidoc.traxretail.com/mobile-scene-sdk
+notes: >-
+  Trax distributes the Scene Mobile SDK to partners for integrating image capture, camera settings,
+  and on-device computer-vision scene capture into their own salesforce mobile apps. It is a
+  partner-distributed native mobile SDK (Android and iOS) obtained through Trax, not published to a
+  public package registry; no public npm/PyPI/Maven/NuGet first-party client library was found.
+packages:
+- language: kotlin
+  platform: android
+  registry: vendor
+  name: Trax Scene Mobile SDK (Android)
+  url: https://www.apidoc.traxretail.com/mobile-scene-sdk
+  install: Obtain from Trax; integrate the native Android Scene SDK per partner documentation.
+  official: true
+- language: swift
+  platform: ios
+  registry: vendor
+  name: Trax Scene Mobile SDK (iOS)
+  url: https://www.apidoc.traxretail.com/mobile-scene-sdk
+  install: Obtain from Trax; integrate the native iOS Scene SDK per partner documentation.
+  official: true

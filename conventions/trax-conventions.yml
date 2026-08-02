@@ -1,0 +1,40 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.apidoc.traxretail.com/
+docs: https://www.apidoc.traxretail.com/
+authentication:
+  style: Trax credentials (username/password) or SSO over OAuth 2.0; Scene SDK uses a daily license token
+  reference: authentication/trax-authentication.yml
+versioning:
+  style: uri-path
+  pattern: /api/:version_number/<project>/...
+  current_examples:
+  - v5
+  - v6
+  notes: API version is embedded in the request path; user resources are published as V4, V5, V6.
+pagination:
+  style: page-number
+  params:
+  - page
+  - per_page
+  default: first page is returned when pagination parameters are omitted
+idempotency:
+  supported: false
+  notes: No idempotency-key mechanism is documented in the Trax API reference.
+rate_limiting:
+  documented: true
+  notes: The API documentation includes a rate-limiting section; specific numeric limits are not published in the public portal.
+base_urls:
+- https://services.traxretail.com
+- https://gservices.traxretail.com
+- https://services.trax-cloud.cn
+error_handling:
+  reference: null
+  notes: A structured problem+json error catalog is not published in the public portal.
+async_jobs:
+  notes: >-
+    Long-running operations are submitted as async jobs (for example POST <host>/api/:version/<project>/async-job)
+    and results retrieved via the Notifier/output services.
+cross_links:
+  authentication: authentication/trax-authentication.yml
+  lifecycle: lifecycle/trax-lifecycle.yml

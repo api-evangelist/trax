@@ -1,24 +1,112 @@
 aid: trax
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/trax.png
 name: Trax
-description: 'Trax is a company surfaced as a portfolio company of softbank-vision-fund and added to the
-  API Evangelist network as a stub for enrichment. Sector: enterprise. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: >-
+  Trax (Trax Retail) is a cloud-based retail intelligence platform that uses computer vision and
+  image recognition to turn shelf photographs into real-time, actionable in-store insights for
+  consumer packaged goods (CPG) brands and retailers. Its platform measures on-shelf availability,
+  planogram and pricing compliance, share of shelf, promotional execution, and competitor activity
+  across retail locations. Trax exposes a partner API surface for master data management (stores,
+  products, regions, retailers), visit planning (routes, tasks, assortments), in-store execution via
+  the Scene Mobile SDK and Input API (sessions, scenes, images), and analysis output/notification
+  services, plus SSO and a Salesforce connector. Trax merged with FORM to combine retail image
+  recognition with task management and workflow automation, and is a portfolio company of the
+  SoftBank Vision Fund.
 url: https://raw.githubusercontent.com/api-evangelist/trax/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - softbank-vision-fund
-x-tier: stub
+x-tier: profiled
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
 - Enterprise
-apis: []
+- Retail
+- Computer Vision
+- Image Recognition
+- CPG
+- Retail Execution
+- Merchandising
+- SaaS
+apis:
+- name: Trax Retail Platform API
+  description: >-
+    Partner-facing REST API for the Trax retail intelligence platform: master data (stores,
+    products, regions, retailers, targets, audit cycle sets), visit planning (routes, visit types,
+    tasks, assortments), in-store execution (Input API for sessions/scenes/images, Scene Mobile SDK
+    deep-linking), analysis output (Notifier service, JSON results), user management (V4–V6), SSO,
+    and a Salesforce connector. Versioned via URI path (for example /api/v5/...). Page-based
+    pagination (page / per_page). Auth via Trax credentials or SSO over OAuth 2.0.
+  humanURL: https://www.apidoc.traxretail.com/
+  baseURL: https://services.traxretail.com
+  tags:
+  - Retail
+  - Image Recognition
+  - Master Data
+  - Merchandising
+  properties:
+  - type: Documentation
+    url: https://www.apidoc.traxretail.com/
+  - type: APIReference
+    url: https://www.apidoc.traxretail.com/input-api
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+common:
+- type: DomainSecurity
+  url: security/trax-domain-security.yml
+- type: DeveloperPortal
+  url: https://www.apidoc.traxretail.com/
+- type: Documentation
+  url: https://www.apidoc.traxretail.com/
+- type: APIReference
+  url: https://www.apidoc.traxretail.com/input-api
+- type: Website
+  url: https://traxretail.com/
+- type: Blog
+  url: https://traxretail.com/resources-content-types/blogs/
+- type: Support
+  url: https://traxretail.com/get-in-touch
+- type: PrivacyPolicy
+  url: https://traxretail.com/privacy-policy/
+- type: TermsOfService
+  url: https://traxretail.com/terms-conditions/
+- type: Authentication
+  url: authentication/trax-authentication.yml
+- type: Conventions
+  url: conventions/trax-conventions.yml
+- type: Lifecycle
+  url: lifecycle/trax-lifecycle.yml
+- type: Packages
+  url: packages/trax-packages.yml
+- type: SDKs
+  url: packages/trax-packages.yml
+- type: Conformance
+  url: conformance/trax-conformance.yml
+- type: DataModel
+  url: data-model/trax-data-model.yml
+- type: LLMsTxt
+  url: llms/trax-llms.txt
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 9
+  pass: local-v1

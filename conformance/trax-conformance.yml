@@ -1,0 +1,24 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.apidoc.traxretail.com/
+standards:
+- id: oauth2
+  conforms: true
+  evidence: SSO authentication uses the OAuth 2.0 protocol against ADFS/Salesforce/Okta/Ping Federate.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No application/problem+json error contract is documented in the public portal.
+- id: json-api
+  conforms: false
+- id: odata
+  conforms: false
+- id: fhir
+  conforms: false
+- id: scim
+  conforms: false
+- id: pagination
+  conforms: true
+  evidence: Page-number pagination via page / per_page parameters.
+- id: idempotency
+  conforms: false
+  evidence: No idempotency-key mechanism documented.

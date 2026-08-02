@@ -1,0 +1,39 @@
+# Trax
+
+> Trax (Trax Retail) is a cloud-based retail intelligence platform that uses computer vision and image recognition to turn shelf photographs into real-time, actionable in-store insights for CPG brands and retailers. It measures on-shelf availability, planogram and pricing compliance, share of shelf, and promotional execution, and exposes a partner API for master data, visit planning, in-store capture (Scene Mobile SDK + Input API), and analysis output. Trax merged with FORM and is a SoftBank Vision Fund portfolio company.
+
+## APIs
+
+- [Trax Retail Platform API](https://www.apidoc.traxretail.com/): Partner REST API — master data (stores, products, regions, retailers), visit planning (routes, tasks, assortments), Input API (sessions, scenes, images), analysis output (Notifier), users V4–V6, SSO, Salesforce connector. Base URLs: https://services.traxretail.com, https://gservices.traxretail.com, https://services.trax-cloud.cn (China).
+
+## Docs
+
+- [API Documentation portal](https://www.apidoc.traxretail.com/)
+- [API URL Addresses](https://www.apidoc.traxretail.com/api-url-addresses)
+- [Input API (sessions/scenes/images)](https://www.apidoc.traxretail.com/input-api)
+- [Scene Mobile SDK](https://www.apidoc.traxretail.com/mobile-scene-sdk)
+- [Salesforce Connector](https://www.apidoc.traxretail.com/sfconnector)
+
+## Conventions
+
+- Authentication: Trax credentials (username/password) or SSO over OAuth 2.0 (ADFS, Salesforce, Okta, Ping Federate); Scene SDK uses a daily license token.
+- Versioning: URI-path (/api/:version_number/...), current v5/v6.
+- Pagination: page-number (page, per_page).
+
+## Artifacts
+
+- [Authentication profile](authentication/trax-authentication.yml)
+- [API conventions](conventions/trax-conventions.yml)
+- [Lifecycle & versioning](lifecycle/trax-lifecycle.yml)
+- [Packages / SDKs](packages/trax-packages.yml)
+- [Conformance](conformance/trax-conformance.yml)
+- [Data model](data-model/trax-data-model.yml)
+- [Domain security](security/trax-domain-security.yml)
+
+## Company
+
+- [Website](https://traxretail.com/)
+- [Blog](https://traxretail.com/resources-content-types/blogs/)
+- [Contact / Support](https://traxretail.com/get-in-touch)
+- [Privacy Policy](https://traxretail.com/privacy-policy/)
+- [Terms & Conditions](https://traxretail.com/terms-conditions/)
